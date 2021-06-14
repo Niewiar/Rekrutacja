@@ -133,10 +133,10 @@ GameObject:
   - component: {fileID: 386982893}
   - component: {fileID: 386982895}
   - component: {fileID: 386982897}
+  - component: {fileID: 386982900}
   - component: {fileID: 386982896}
   - component: {fileID: 386982899}
   - component: {fileID: 386982898}
-  - component: {fileID: 386982900}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -288,8 +288,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93623b1e836c116478453142dd3fbed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _groundChecker: {fileID: 937043430}
+  _whatIsGround:
+    serializedVersion: 2
+    m_Bits: 256
+  _checkerRadius: 0.4
   _speed: 3
   _jumpForce: 500
+  playerIsJumping: 0
 --- !u!114 &386982899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -376,7 +382,7 @@ GameObject:
   - component: {fileID: 479001230}
   - component: {fileID: 479001229}
   - component: {fileID: 479001228}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -4302,8 +4308,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 937043430}
-  - component: {fileID: 937043431}
-  - component: {fileID: 937043432}
   m_Layer: 0
   m_Name: GroundChecker
   m_TagString: Untagged
@@ -4325,35 +4329,6 @@ Transform:
   m_Father: {fileID: 386982894}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &937043431
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 937043429}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.05
---- !u!114 &937043432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 937043429}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ec7eb0fe18928a48bc7d54c786d9d90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grounded: 0
 --- !u!1 &1058029939
 GameObject:
   m_ObjectHideFlags: 0
