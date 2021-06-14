@@ -19,9 +19,9 @@ public class InputManager : MonoBehaviour
         _controls = new InputSystem();
     }
 
-    public Vector2 MoveControls()
+    public float SideMoveValue()
     {
-       return _controls.Player.Move.ReadValue<Vector2>();
+       return _controls.Player.Move.ReadValue<float>();
     }
 
     public bool JumpButtonWasClicked()
