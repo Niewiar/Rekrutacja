@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     [Header("Movement options values")]
     [SerializeField] [Range(1, 10)] private float _speed = 3;
     [SerializeField] [Range(100, 1000)] private float _jumpForce = 500;
+    [SerializeField] private Transform _attackTrigger;
 
     private InputManager _inputManager;
     private Rigidbody2D _rb;
@@ -49,10 +50,12 @@ public class PlayerController : MonoBehaviour
         if (_inputManager.SideMoveValue() < 0)
         {
             _spriteRenderer.flipX = true;
+            _attackTrigger.localEulerAngles = new Vector3(0, -180, 0);
         }
         else if (_inputManager.SideMoveValue() > 0)
         {
             _spriteRenderer.flipX = false;
+            _attackTrigger.localEulerAngles = new Vector3(0, 0, 0);
         }
 
         _animator.SetFloat("Speed", Mathf.Abs(_inputManager.SideMoveValue()));
