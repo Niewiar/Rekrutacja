@@ -15,6 +15,7 @@ public class EnemieCombat : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             RepulseTarget(collision.gameObject);
+            collision.gameObject.GetComponent<PlayerCombat>().TakeDamage();
         }
     }
 

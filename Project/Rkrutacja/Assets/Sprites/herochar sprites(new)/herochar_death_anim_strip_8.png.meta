@@ -126,10 +126,10 @@ TextureImporter:
       name: herochar_death_anim_strip_8_0
       rect:
         serializedVersion: 2
-        x: 4
+        x: 0
         y: 0
-        width: 9
-        height: 13
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,10 +147,10 @@ TextureImporter:
       name: herochar_death_anim_strip_8_1
       rect:
         serializedVersion: 2
-        x: 20
-        y: 2
-        width: 8
-        height: 10
+        x: 16
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,10 +168,10 @@ TextureImporter:
       name: herochar_death_anim_strip_8_2
       rect:
         serializedVersion: 2
-        x: 37
-        y: 5
-        width: 7
-        height: 6
+        x: 32
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,10 +189,10 @@ TextureImporter:
       name: herochar_death_anim_strip_8_3
       rect:
         serializedVersion: 2
-        x: 52
-        y: 4
-        width: 9
-        height: 8
+        x: 48
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,10 +210,10 @@ TextureImporter:
       name: herochar_death_anim_strip_8_4
       rect:
         serializedVersion: 2
-        x: 68
-        y: 3
-        width: 11
-        height: 10
+        x: 64
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,10 +231,10 @@ TextureImporter:
       name: herochar_death_anim_strip_8_5
       rect:
         serializedVersion: 2
-        x: 84
-        y: 2
-        width: 11
-        height: 12
+        x: 80
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,10 +252,10 @@ TextureImporter:
       name: herochar_death_anim_strip_8_6
       rect:
         serializedVersion: 2
-        x: 100
-        y: 2
-        width: 11
-        height: 12
+        x: 96
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -273,10 +273,10 @@ TextureImporter:
       name: herochar_death_anim_strip_8_7
       rect:
         serializedVersion: 2
-        x: 115
-        y: 1
-        width: 13
-        height: 14
+        x: 112
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
