@@ -9,6 +9,7 @@ public class LandAnim : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         playerController = animator.GetComponent<PlayerController>();
+        playerController.checkYAxis = false;
     }
 
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

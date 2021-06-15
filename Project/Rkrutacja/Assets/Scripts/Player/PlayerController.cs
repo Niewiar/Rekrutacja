@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     private bool _grounded;
 
     [HideInInspector] public bool playerIsJumping;
+    [HideInInspector] public bool checkYAxis;
 
     private void Awake()
     {
@@ -49,7 +50,7 @@ public class PlayerController : MonoBehaviour
         {
             _spriteRenderer.flipX = true;
         }
-        else
+        else if (_inputManager.SideMoveValue() > 0)
         {
             _spriteRenderer.flipX = false;
         }
@@ -64,9 +65,13 @@ public class PlayerController : MonoBehaviour
     {
         _animator.SetFloat("yAxis", _rb.velocity.y);
 
-        if (!playerIsJumping)
+        if (checkYAxis && _rb.velocity.y == 0)
         {
-            _animator.ResetTrigger("Land");
+            _animator.SetBool("Land", true);
+        }
+        else if(!checkYAxis)
+        {
+            _animator.SetBool("Land", false);
         }
 
         if (_grounded && _inputManager.JumpButtonWasClicked() && !playerIsJumping)
@@ -90,8 +95,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void Jump()
+    public IEnumerator JumpCourutine()
     {
         _rb.AddForce(new Vector2(0f, _jumpForce));
+        yield return new WaitForSeconds(0.5f);
+        checkYAxis = true;
     }
 }
