@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class LandAnim : StateMachineBehaviour
 {
-    PlayerController playerController;
+    private PlayerController _playerController;
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        playerController = animator.GetComponent<PlayerController>();
-        playerController.checkYAxis = false;
+        _playerController = animator.GetComponent<PlayerController>();
+        _playerController.checkYAxis = false;
     }
 
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        playerController.playerIsJumping = false;
+        _playerController.playerIsJumping = false;
     }
 }

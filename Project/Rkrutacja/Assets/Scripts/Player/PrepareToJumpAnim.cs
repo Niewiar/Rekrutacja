@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class PrepareToJumpAnim : StateMachineBehaviour
 {
-    private PlayerController playerController;
+    private PlayerController _playerController;
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        playerController = animator.GetComponent<PlayerController>();
-        playerController.checkYAxis = false;
+        _playerController = animator.GetComponent<PlayerController>();
+        _playerController.checkYAxis = false;
     }
 
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        playerController.StartCoroutine(playerController.JumpCourutine());
+        _playerController.StartCoroutine(_playerController.JumpCourutine());
     }
 }
