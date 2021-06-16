@@ -9,6 +9,7 @@ public class PlayerCombat : MonoBehaviour
 {
     public GameObject atackTrigger;
     [SerializeField] private HealthCounter _healthCounter;
+    [SerializeField] private Animator _hitAnimator;
 
     private Animator _animator;
     private InputManager _inputManager;
@@ -54,6 +55,7 @@ public class PlayerCombat : MonoBehaviour
     public void TakeDamage()
     {
         _health--;
+        _hitAnimator.SetTrigger("Hit");
 
         if (_health <= 0)
         {

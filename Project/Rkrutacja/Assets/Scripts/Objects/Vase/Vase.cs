@@ -38,7 +38,5 @@ public class Vase : MonoBehaviour
             obj.transform.position = transform.position;
             obj.GetComponent<Coin>().coinsCounter = this._coinsCounter;
         }
-
-        Destroy(this.gameObject);
     }
 }
