@@ -12,7 +12,6 @@ public class EnemieCombat : MonoBehaviour
     [SerializeField] private bool _canRepulseTarget;
     [SerializeField] private float _horizontalRepulseForce = 100f;
     [SerializeField] private float _verticalRepulseForce = 500f;
-    [SerializeField] private float _timeToUnlockTargetMovement = 0.7f;
 
     private Animator _animator;
     private EnemieAi _enemieAi;
@@ -28,7 +27,6 @@ public class EnemieCombat : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             RepulseTarget(collision.gameObject);
-            collision.gameObject.GetComponent<PlayerCombat>().TakeDamage();
         }
     }
 
@@ -47,6 +45,7 @@ public class EnemieCombat : MonoBehaviour
             Vector2 direction = target.transform.position - transform.position;
             direction = direction.normalized;
             target.GetComponent<Rigidbody2D>().AddForce(new Vector2(direction.x * _horizontalRepulseForce, direction.y * _verticalRepulseForce));
+            target.GetComponent<PlayerCombat>().TakeDamage();
         }
     }
 
@@ -65,7 +64,7 @@ public class EnemieCombat : MonoBehaviour
     private void Dead()
     {
         _enemieAi.enabled = false;
-        GetComponent<BoxCollider2D>().enabled = false;
+        GetComponent<Collider2D>().enabled = false;
         _animator.SetTrigger("Dead");
     }
 }
