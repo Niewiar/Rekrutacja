@@ -13,6 +13,7 @@ public class PlayerCombat : MonoBehaviour
     private Animator _animator;
     private InputManager _inputManager;
     private int _health;
+    private bool _isDead;
 
     [HideInInspector] public bool playerAttacking;
 
@@ -42,8 +43,12 @@ public class PlayerCombat : MonoBehaviour
 
     private void Dead()
     {
-        GetComponent<PlayerController>().enabled = false;
-        _animator.SetTrigger("Dead");
+        if (!_isDead)
+        {
+            _isDead = true;
+            GetComponent<PlayerController>().enabled = false;
+            _animator.SetTrigger("Dead");
+        }
     }
 
     public void TakeDamage()

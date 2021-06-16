@@ -21,6 +21,7 @@ public class EnemieAi : MonoBehaviour
     [Header("Patrol edge to edge settings")]
     [SerializeField] private Transform _groundChecker;
     [SerializeField] private float _groudCheckerRayDistance = 0.4f;
+    [SerializeField] private Transform _attackRayStartPos;
     [Header("Standing patrol settings")]
     [SerializeField] private float _rotationTime = 2f;
     [Header("Patrol from point to point settings")]
@@ -34,13 +35,15 @@ public class EnemieAi : MonoBehaviour
     private int _pointsIndex;
     private Rigidbody2D _rb;
     private bool _isJumping;
-    private EnemyStates _enemyState;
 
+    [HideInInspector] public EnemyStates enemyState;
     [HideInInspector] public bool hit;
+    [HideInInspector] public RaycastHit2D targetHit;
+    [HideInInspector] public Transform playerTransform;
 
     private void Awake()
     {
-        _enemyState = EnemyStates.Patrol;
+        enemyState = EnemyStates.Patrol;
         _pointsIndex = 0;
         hit = false;
         _isLookingRight = true;
@@ -69,9 +72,12 @@ public class EnemieAi : MonoBehaviour
 
     private void Update()
     {
-        ChangeStates();
+        if (enemyState != EnemyStates.Atack)
+        {
+            CheckCanAttack();
+        }
 
-        if (_enemyState == EnemyStates.Patrol)
+        if (enemyState == EnemyStates.Patrol)
         {
             if (_patrolingFromEdgeToEdge && !hit)
             {
@@ -166,16 +172,29 @@ public class EnemieAi : MonoBehaviour
         }
     }
 
-    private void ChangeStates()
+    public void CheckCanAttack()
     {
-        RaycastHit2D targetHit = Physics2D.Raycast(transform.position, Vector2.right, _atackRayDistance);
-        if (targetHit.collider.tag == "Player" && _canAtack)
+        if (_canAtack)
         {
-            _enemyState = EnemyStates.Atack;
-        }
-        else
-        {
-            _enemyState = EnemyStates.Patrol;
+            if (transform.eulerAngles.y == 0)
+            {
+                targetHit = Physics2D.Raycast(_attackRayStartPos.position, Vector2.right, _atackRayDistance);
+            }
+            else
+            {
+                targetHit = Physics2D.Raycast(_attackRayStartPos.position, Vector2.left, _atackRayDistance);
+            }
+
+            if (targetHit.collider != null && targetHit.collider.gameObject.tag == "Player")
+            {
+                if (playerTransform == null)
+                {
+                    playerTransform = targetHit.collider.transform;
+                }
+
+                enemyState = EnemyStates.Atack;
+                _animator.SetTrigger("Attack");
+            }
         }
     }
 
