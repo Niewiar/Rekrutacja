@@ -31,7 +31,13 @@ public class Coin : MonoBehaviour
 
             if (colliders != null && _player == null)
             {
-                _player = colliders[0].gameObject.transform;
+                foreach (var item in colliders)
+                {
+                    if (item != null)
+                    {
+                        _player = item.gameObject.transform;
+                    }
+                }
             }
 
             if (_player != null)
