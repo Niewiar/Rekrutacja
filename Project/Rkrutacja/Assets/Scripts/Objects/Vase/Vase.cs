@@ -1,11 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(Animator))]
 public class Vase : MonoBehaviour
 {
+    [Header("Load scene vase")]
+    public bool isLoadSceneVase;
+    [Tooltip("Set -1 to exit game")] public int sceneIndex;
+    [Header("Normal vase")]
     [SerializeField] private GameObject _coinPrefab;
     [SerializeField] private int _maxCoinsNumber = 5;
     [SerializeField] private CoinsCounter _coinsCounter;
@@ -26,6 +31,11 @@ public class Vase : MonoBehaviour
             _boxCollider.enabled = false;
             _animator.SetTrigger("Break");
         }
+    }
+
+    public void LoadScene(int index)
+    {
+        SceneManager.LoadScene(index);
     }
 
     public void GenerateCoins()
