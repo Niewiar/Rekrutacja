@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2afda2f653e89134cb320c10970ff7fb, type: 3}
   m_Name: GameData
   m_EditorClassIdentifier: 
-  collectedCoins: 0
-  playerLife: 0
+  collectedCoins: 2
+  playerLife: 2
