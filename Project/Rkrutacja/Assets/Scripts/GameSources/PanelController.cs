@@ -15,6 +15,7 @@ public class PanelController : MonoBehaviour
     [Space(10)]
     [SerializeField] private TextMeshProUGUI[] _options;
     [SerializeField] private TextMeshProUGUI title;
+    [SerializeField] private TextMeshProUGUI _controllsText;
 
     private int _currentOption;
     private bool _panelActive;
@@ -67,6 +68,7 @@ public class PanelController : MonoBehaviour
             title.SetText("PAUSE");
             if (!_panelActive)
             {
+                _controllsText.SetText("W/S-SWITCH OPTION   SPACE-ACCEPT   ESC-EXIT");
                 _panelActive = true;
                 _panel.SetActive(true);
                 ShowActiveOption();
@@ -74,6 +76,7 @@ public class PanelController : MonoBehaviour
             }
             else
             {
+                _controllsText.SetText("A/D-MOVE   W-JUMP  SPACE-ATTACK  ESC-PAUSE");
                 _panelActive = false;
                 _panel.SetActive(false);
                 Time.timeScale = 1;
@@ -81,6 +84,7 @@ public class PanelController : MonoBehaviour
         }
         else
         {
+            _controllsText.SetText("W/S-SWITCH OPTION   SPACE-ACCEPT");
             title.SetText("LOSE");
             _panelActive = true;
             _panel.SetActive(true);

@@ -110,6 +110,7 @@ MonoBehaviour:
   - {fileID: 8515672380622981786}
   - {fileID: 1140622339235325410}
   title: {fileID: 4623792908026535109}
+  _controllsText: {fileID: 3410558559419227127}
   playerDead: 0
 --- !u!1 &1196215032736434246
 GameObject:

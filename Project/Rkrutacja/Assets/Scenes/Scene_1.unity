@@ -4270,7 +4270,7 @@ PrefabInstance:
     - target: {fileID: 2560185023975584360, guid: d45b28cbf857a0f4bb9610c1b414756b,
         type: 3}
       propertyPath: _atackRayDistance
-      value: 0.4
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 2560185023975584360, guid: d45b28cbf857a0f4bb9610c1b414756b,
         type: 3}
@@ -4447,7 +4447,7 @@ PrefabInstance:
     - target: {fileID: 2560185023975584360, guid: d45b28cbf857a0f4bb9610c1b414756b,
         type: 3}
       propertyPath: _atackRayDistance
-      value: 0.4
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 2560185023975584360, guid: d45b28cbf857a0f4bb9610c1b414756b,
         type: 3}
@@ -4551,7 +4551,7 @@ PrefabInstance:
     - target: {fileID: 2560185023975584360, guid: d45b28cbf857a0f4bb9610c1b414756b,
         type: 3}
       propertyPath: _atackRayDistance
-      value: 0.4
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 2560185023975584360, guid: d45b28cbf857a0f4bb9610c1b414756b,
         type: 3}
