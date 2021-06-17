@@ -14,6 +14,7 @@ public class EnemieAi : MonoBehaviour
     [Header("Attack")]
     [SerializeField] private bool _canAtack;
     [SerializeField] private float _atackRayDistance = 1f;
+    [SerializeField] private Transform _attackRayStartPos;
     [Header("Patrols type")]
     [SerializeField] [Tooltip("If true remember to set patrol settings")] private bool _patrolingFromEdgeToEdge;
     [SerializeField] [Tooltip("If true remember to set patrol settings")] private bool _standingPatrol;
@@ -21,7 +22,6 @@ public class EnemieAi : MonoBehaviour
     [Header("Patrol edge to edge settings")]
     [SerializeField] private Transform _groundChecker;
     [SerializeField] private float _groudCheckerRayDistance = 0.4f;
-    [SerializeField] private Transform _attackRayStartPos;
     [Header("Standing patrol settings")]
     [SerializeField] private float _rotationTime = 2f;
     [Header("Patrol from point to point settings")]
