@@ -347,6 +347,9 @@ MonoBehaviour:
   - {fileID: 1438487087764448145}
   - {fileID: 1438487087639736669}
   - {fileID: 1438487088309501907}
+  heartsImage:
+  - {fileID: 1438487088150383988}
+  - {fileID: 1438487089585348497}
 --- !u!1 &1438487087764448145
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,8 +516,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 59
+  m_fontSizeBase: 59
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

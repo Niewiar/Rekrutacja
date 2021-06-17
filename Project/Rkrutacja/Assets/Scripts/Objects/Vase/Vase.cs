@@ -17,6 +17,7 @@ public class Vase : MonoBehaviour
 
     private BoxCollider2D _boxCollider;
     private Animator _animator;
+    [HideInInspector] public GameManager gameManager;
 
     void Awake()
     {
@@ -35,6 +36,11 @@ public class Vase : MonoBehaviour
 
     public void LoadScene(int index)
     {
+        if (gameManager != null)
+        {
+            gameManager.SaveData();
+        }
+ 
         SceneManager.LoadScene(index);
     }
 

@@ -17,6 +17,11 @@ public class CoinsCounter : MonoBehaviour
     public void AddCoin()
     {
         numberOfCoins++;
+        SetText();
+    }
+
+    public void SetText()
+    {
         _counterText.SetText(numberOfCoins.ToString());
     }
 }

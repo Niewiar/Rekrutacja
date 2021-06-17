@@ -13,14 +13,14 @@ public class PlayerCombat : MonoBehaviour
 
     private Animator _animator;
     private InputManager _inputManager;
-    private int _health;
     private bool _isDead;
 
+    [HideInInspector] public int health;
     [HideInInspector] public bool playerAttacking;
 
     private void Awake()
     {
-        _health = 3;
+        health = 3;
         playerAttacking = false;
         _animator = GetComponent<Animator>();
         _inputManager = GetComponent<InputManager>();
@@ -54,15 +54,15 @@ public class PlayerCombat : MonoBehaviour
 
     public void TakeDamage()
     {
-        _health--;
+        health--;
         _hitAnimator.SetTrigger("Hit");
 
-        if (_health <= 0)
+        if (health <= 0)
         {
-            _health = 0;
+            health = 0;
             Dead();
         }
 
-        _healthCounter.DestroyHeart(_health);
+        _healthCounter.DestroyHeart(health);
     }
 }

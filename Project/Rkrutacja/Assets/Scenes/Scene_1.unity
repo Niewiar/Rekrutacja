@@ -314,6 +314,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68b751f10c102544b8ed48417ea602fe, type: 3}
+--- !u!114 &320189556 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2408198891461820975, guid: 68b751f10c102544b8ed48417ea602fe,
+    type: 3}
+  m_PrefabInstance: {fileID: 320189555}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ba91963903a8cc47b8751d1497576be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &344567373
 GameObject:
   m_ObjectHideFlags: 0
@@ -4079,8 +4091,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2863265f2d6837140bd814a8fc03a8c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _loadData: 1
+  _gameData: {fileID: 11400000, guid: 8bfb464f88e02e14ba2a2dd9a41474df, type: 2}
   enemiesOnLvl: 3
   _sceneVase: {fileID: 1515664518}
+  _coinsCounter: {fileID: 431826778}
+  _healthCounter: {fileID: 1927691587}
+  _player: {fileID: 320189556}
 --- !u!4 &1350749355
 Transform:
   m_ObjectHideFlags: 0
