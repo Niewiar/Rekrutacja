@@ -7,7 +7,8 @@ using UnityEngine;
 public class EnemieCombat : MonoBehaviour
 {
     [Header("Enemy stats")]
-    [SerializeField] private int _health;
+    public int health;
+    [SerializeField] private GameObject _healthBar;
     [Header("Repulse target")]
     [SerializeField] private bool _canRepulseTarget;
     [SerializeField] private float _horizontalRepulseForce = 100f;
@@ -20,6 +21,7 @@ public class EnemieCombat : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _enemieAi = GetComponent<EnemieAi>();
+        _healthBar.SetActive(false);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -51,11 +53,12 @@ public class EnemieCombat : MonoBehaviour
 
     private void TakeDamage()
     {
-        _health--;
+        _healthBar.SetActive(true);
+        health--;
         _enemieAi.hit = true;
         _animator.SetTrigger("Hit");
 
-        if (_health == 0)
+        if (health == 0)
         {
             Dead();
         }
@@ -63,6 +66,7 @@ public class EnemieCombat : MonoBehaviour
 
     private void Dead()
     {
+        _healthBar.SetActive(false);
         _enemieAi.enabled = false;
         GetComponent<Collider2D>().enabled = false;
         _animator.SetTrigger("Dead");

@@ -238,6 +238,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UICanvans
       objectReference: {fileID: 0}
+    - target: {fileID: 1438487087690548319, guid: d8b2797a014f4e64fafe793a84284109,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8b2797a014f4e64fafe793a84284109, type: 3}
 --- !u!1001 &320189555
