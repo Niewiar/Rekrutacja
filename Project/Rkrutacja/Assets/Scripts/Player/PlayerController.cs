@@ -10,8 +10,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Ground checker options")]
     [SerializeField] private Transform _groundChecker;
-    [SerializeField] private LayerMask _whatIsGround;
-    [SerializeField] private float _checkerRadius;
+    [SerializeField] private float _groudCheckerRayDistance;
     [Header("Movement options values")]
     [SerializeField] [Range(1, 10)] private float _speed = 3;
     [SerializeField] [Range(100, 1000)] private float _jumpForce = 500;
@@ -86,9 +85,9 @@ public class PlayerController : MonoBehaviour
 
     private void GroundCheck()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(_groundChecker.position, _checkerRadius, _whatIsGround);
+        RaycastHit2D groundHit = Physics2D.Raycast(_groundChecker.position, Vector2.down, _groudCheckerRayDistance);
 
-        if (colliders.Length > 0)
+        if (groundHit.collider != null && groundHit.collider.tag == "Ground")
         {
             _grounded = true;
         }
