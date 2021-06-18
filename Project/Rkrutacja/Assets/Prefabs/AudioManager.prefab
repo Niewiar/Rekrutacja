@@ -70,7 +70,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: a65414e394d2d4f4ea2342d0396bc9e8, type: 3}
     mixerGroup: {fileID: 24300002, guid: 02ec4e7a5a644fb49a1a88e5a4371eab, type: 2}
     loop: 0
-    valume: 1
+    valume: 0.7
     pitch: 1
     source: {fileID: 0}
   - name: Vase
