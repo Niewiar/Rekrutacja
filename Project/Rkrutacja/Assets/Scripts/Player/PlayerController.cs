@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
     private bool _grounded;
+    private bool _walkPlay;
 
     [HideInInspector] public bool playerIsJumping;
     [HideInInspector] public bool checkYAxis;

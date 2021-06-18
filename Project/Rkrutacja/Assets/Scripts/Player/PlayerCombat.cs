@@ -14,6 +14,7 @@ public class PlayerCombat : MonoBehaviour
     private Animator _animator;
     private InputManager _inputManager;
     private bool _isDead;
+    private AudioManager _audio;
 
     [HideInInspector] public int health;
     [HideInInspector] public bool playerAttacking;
@@ -25,6 +26,7 @@ public class PlayerCombat : MonoBehaviour
         _animator = GetComponent<Animator>();
         _inputManager = GetComponent<InputManager>();
         atackTrigger.SetActive(false);
+        _audio = FindObjectOfType<AudioManager>();
     }
 
     private void Update()
@@ -56,6 +58,7 @@ public class PlayerCombat : MonoBehaviour
     {
         health--;
         _hitAnimator.SetTrigger("Hit");
+        _audio.Play("PlayerOugh");
 
         if (health <= 0)
         {

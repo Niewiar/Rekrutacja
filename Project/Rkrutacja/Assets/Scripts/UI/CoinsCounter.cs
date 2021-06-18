@@ -6,6 +6,7 @@ using TMPro;
 public class CoinsCounter : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _counterText;
+    [SerializeField] private AudioManager _audioManager;
 
     [HideInInspector] public int numberOfCoins;
 
@@ -16,6 +17,7 @@ public class CoinsCounter : MonoBehaviour
 
     public void AddCoin()
     {
+        _audioManager.Play("Coin");
         numberOfCoins++;
         SetText();
     }

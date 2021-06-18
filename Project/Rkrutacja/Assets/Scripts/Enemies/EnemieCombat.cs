@@ -16,9 +16,11 @@ public class EnemieCombat : MonoBehaviour
 
     private Animator _animator;
     private EnemieAi _enemieAi;
+    private AudioManager _audio;
 
     private void Awake()
     {
+        _audio = FindObjectOfType<AudioManager>();
         _animator = GetComponent<Animator>();
         _enemieAi = GetComponent<EnemieAi>();
         _healthBar.SetActive(false);
@@ -57,6 +59,7 @@ public class EnemieCombat : MonoBehaviour
         health--;
         _enemieAi.hit = true;
         _animator.SetTrigger("Hit");
+        _audio.Play("EnemyOugh");
 
         if (health == 0)
         {

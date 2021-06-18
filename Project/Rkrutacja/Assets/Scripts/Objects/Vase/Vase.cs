@@ -17,10 +17,12 @@ public class Vase : MonoBehaviour
 
     private BoxCollider2D _boxCollider;
     private Animator _animator;
+    private AudioManager _audio;
     [HideInInspector] public GameManager gameManager;
 
     void Awake()
     {
+        _audio = FindObjectOfType<AudioManager>();
         _boxCollider = GetComponent<BoxCollider2D>();
         _animator = GetComponent<Animator>();
     }
@@ -31,6 +33,7 @@ public class Vase : MonoBehaviour
         {
             _boxCollider.enabled = false;
             _animator.SetTrigger("Break");
+            _audio.Play("Vase");
         }
     }
 
